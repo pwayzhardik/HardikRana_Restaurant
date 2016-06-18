@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<title>Seat Reservation</title>
+		<script>
+		function validate()
+		{
+			//alert("ceck");
+			var name=document.getElementById("name").value;
+			var email=document.getElementById("email").value;
+			var password=document.getElementById("pwd").value;
+			var mobile=document.getElementById("mobile").value;
+			var msg=document.getElementById("msg").value;
+			var state=document.getElementById("state").value;
+			var namepattern=/^[a-z]+$/;
+			var emailpattern=/^[a-z]+[a-z0-9\.\_]+[@]+[a-z]+[.]+[a-z]+$/;
+			var passwordpattern=/^[0-9]+[a-z0-9A-Z]+[@\$]+$/;
+			var mobilepattern=/^[0-9]+$/;
+			if(name.length==0)
+			{
+			alert("please enter name");
+			document.getElementById("name").focus();
+			return false;
+			}
+			if(!name.match(namepattern))
+			{
+			alert("please enter name and should enter small characters");
+			document.getElementById("name").focus();
+			return false;
+			
+			}
+			if(email.length==0)
+			{
+			alert("please enter email");
+			document.getElementById("email").focus();
+			return false;
+			}
+			if(!email.match(emailpattern))
+			{
+			alert("please enter email ex..abc@xyz.com");
+			document.getElementById("email").focus();
+			return false;
+			
+			}
+			if(password.length==0)
+			{
+			alert("please enter password");
+			document.getElementById("pwd").focus();
+			return false;
+			}
+			if(!password.match(passwordpattern))
+			{
+			alert("password should start with number and end with @ or $");
+			document.getElementById("pwd").focus();
+			return false;
+			
+			}
+			if(mobile.length!=10)
+			{
+			alert("please enter mobile and should be 10 numbers");
+			document.getElementById("mobile").focus();
+			return false;
+			}
+			if(!mobile.match(mobilepattern))
+			{
+			alert("please enter mobile and should be numerics");
+			document.getElementById("mobile").focus();
+			return false;
+			
+			}
+			if(msg.length==0)
+			{
+			alert("please enter message");
+			document.getElementById("msg").focus();
+			return false;
+			}
+		
+			if(state=='Select State')
+			{
+			alert("please select state");
+			document.getElementById("state").focus();
+			return false;
+			}
+			
+		}
+			
+		</script>
+		
+		<style>
+			body{
+				background: red; /* For browsers that do not support gradients */
+				background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1)); /*Safari 5.1-6*/
+				background: -o-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Opera 11.1-12*/
+				background: -moz-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Fx 3.6-15*/
+				background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*Standard*/
+			}
+				  
+			
+		</style>
+	</head>
+	<body>
+	<form method="get" action="index.html">
+	
+		<table align="center">
+			<tr>
+				<td>Name</td>
+				<td><input type="text" value="" id="name" name="name"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" value="" id="email" name="email"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" value="" id="pwd" name="pwd"></td>
+			</tr>
+			<tr>
+				<td>Mobile</td>
+				<td><input type="text" value="" id="mobile" name="mobile"></td>
+			</tr>
+			<tr>
+				<td>Message(Include how many seats)</td>
+				<td><textarea id="msg" name="msg"></textarea></td>
+			</tr>
+			<tr>
+				<td>State</td>
+				<td>
+					<select id="state">
+						<option>Select State</option>
+						<option>NJ</option>
+						<option>NC</option>
+						<option>NS</option>
+						<option>NY</option>
+						<option>CA</option>
+						<option>PA</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" value="Submit" name="submit" onclick="return validate()">
+				</td>
+			</tr>
+				
+		</table>
+	</form>	
+	</body>
+</html>
